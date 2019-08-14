@@ -1,10 +1,11 @@
-import { Robot } from 'app/models/robot';
+import { Robot, Player } from 'app/models/robot';
 import { Coordinates } from 'app/models/coordinates';
 
 export class Environment {
   boardSize: number;
-  player: Robot;
+  player: Player;
   enemies: Robot[];
+  objects: any[];
   tiles: [][];
   winPos: Coordinates;
 
@@ -14,6 +15,7 @@ export class Environment {
 
     this.player = level.player;
     this.enemies = level.enemies;
+    this.objects = level.objects;
     this.winPos = level.winPos;
 
     let row;

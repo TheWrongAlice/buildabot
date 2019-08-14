@@ -94,7 +94,14 @@ export class AppComponent {
       this.environment.player[playerInstruction.f]();
       await delay(500);
 
+      // Check for interactable objects
+      const objectOnTile = this.environment.objects.find(o => o.position.matches(this.environment.player.position));
+      if (objectOnTile) {
+        this.environment.player.interactWithObject(objectOnTile);
+      }
+
       // Check win condition
+      // TODO: Can probably remove this block when battery has been refactor as interactable object (win interaction)
       if (this.environment.player.position.matches(this.level.winPos)) {
         console.log('program ended (player won)');
         this.result = Result.success;

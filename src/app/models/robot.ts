@@ -1,17 +1,20 @@
 import { Coordinates } from 'app/models/coordinates';
 import { Program } from 'app/models/program';
+import { Object } from './object';
 
 export class Robot {
   position: Coordinates;
   rotation: number;
   program: Program;
   type: string;
+  interactions: object[];
 
   constructor(opts) {
     this.position = new Coordinates({x: opts.position.x, y: opts.position.y});
     this.rotation = opts.rotation;
     this.program = opts.program || new Program({});
     this.type = opts.type;
+    this.interactions = [];
   }
 
   /*
@@ -61,4 +64,21 @@ export class Robot {
   sleep() {
     // do nothing
   }
+
+  /*
+   * Interactions
+   */
+  interactWithObject(interactableObject) {
+    console.log(`Trying to interact with ${interactableObject}`);
+    /*
+    if (this.interactions) {
+      this.interactions.find((e) => e.type)
+    }
+    */
+  }
+}
+
+
+export class Player extends Robot {
+  interactions = [];
 }

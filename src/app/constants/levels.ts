@@ -1,5 +1,6 @@
 import { Coordinates } from 'app/models/coordinates';
 import { Level } from 'app/models/level';
+import { Trap } from 'app/models/object';
 
 export const LEVELS = [
   new Level({
@@ -36,6 +37,23 @@ export const LEVELS = [
   }),
   new Level({
     id: 3,
+    /*
+    boardSize: 5,
+    startPos: new Coordinates({x: 2, y: 4}),
+    winPos: new Coordinates({x: 2, y: 1}),
+    instructionSet: [
+      'moveForward',
+      'moveBackward',
+      'turnLeft',
+      'turnRight',
+    ],
+    objects: [
+      new Trap({position: new Coordinates({x: 2, y: 2})}),
+    ]
+  }),
+  new Level({
+    id: 4,
+    */
     boardSize: 5,
     startPos: new Coordinates({x: 2, y: 4}),
     winPos: new Coordinates({x: 0, y: 0}),
@@ -56,7 +74,7 @@ export const LEVELS = [
           ],
         }),
       }),
-    ]
+    ],
     */
   }),
 ];

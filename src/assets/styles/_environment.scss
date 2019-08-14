@@ -24,6 +24,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1;
 }
 
 .battery {
@@ -32,4 +33,12 @@
   mask: url('../images/battery.svg') no-repeat center center;
   mask-size: 40%;
   background-color: $green;
+}
+
+.trap {
+  width: 100px;
+  height: 100px;
+  mask: url('../images/trap.svg') no-repeat center 70%;
+  mask-size: 55%;
+  background-color: $red;
 }
